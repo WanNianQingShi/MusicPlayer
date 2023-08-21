@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>SuchUI2-App</title>
+    <link rel="stylesheet" href="css/index.css">
+    <script src="js/index.js"></script>
+    <script src="page/home/home.js"></script>
+    <script src="js/uni_api.js"></script>
+    <link rel="stylesheet" href="img/bootstrap-icons-1.10.5/font/bootstrap-icons.css">
+    <script type="module" src="https://unpkg.com/xy-ui"></script>
+    
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/mdui@1.0.1/dist/css/mdui.min.css"
+        integrity="sha384-cLRrMq39HOZdvE0j6yBojO4+1PrHfB7a9l5qLcmRm/fiWXYY+CndJPmyu5FV/9Tw" crossorigin="anonymous" />
+    <script src="https://cdn.jsdelivr.net/npm/mdui@1.0.1/dist/js/mdui.min.js"
+        integrity="sha384-gCMZcshYKOGRX9r6wbDrvF+TcCCswSHFucUzUPwka+Gr+uHgjlYvkABr95TCOz3A"
+        crossorigin="anonymous"></script>
+
+
+</head>
+
+<body>
+    <div id="home">
+        <div id="head">
+            <div id="app-name" onclick="quitApp()">{}</div>
+            <div id="time"></div>
+        </div>
+
+        <div id="home-body">
+
+            <div id="main">
+                <input type="file" id="submit" accept="audio/*"/>
+                <audio id="play-kit"></audio>
+                <div id="song-name">歌名</div>
+                <div id="singer">文件类型</div>
+                <div id="manage-area">
+                    <button id="play"><i class="bi bi-play-fill" style="font-size: 60px;"></i></button>
+                    <input type="range" value="0" id="slider" />
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- <div class="page" id="version">
+        <div class="page-head">
+            <div class="page-name">Back|Version</div>
+        </div>
+        <div class="page-body"></div>
+    </div> -->
+
+
+
+
+</body>
+
+</html>
