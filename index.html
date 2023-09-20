@@ -1,4 +1,4 @@
-		<!DOCTYPE html>
+			<!DOCTYPE html>
 		<html lang="en">
 		
 		<head>
@@ -108,13 +108,18 @@
 		        </div>
 		
 		        <div id="home-body">
-		            <div id="music-container" style="display: none;">
-		                <audio id="audio-player"></audio>
-		                <div id="song-name" class="mdui-ripple mdui-ripple-white">歌名</div>
-		                <div id="singer" class="mdui-ripple mdui-ripple-white">文件类型</div>
+		          
 		                <div id="manage-area">
-		                    <button id="play" class="mdui-ripple mdui-ripple-white"><i class="bi bi-play-fill" style="font-size: 60px;"></i></button>
-		                    <input type="range" value="0" id="slider" />
+		                   <div id="music-container" style="display: none;">
+   <!-- 修改为 audio 标签 -->
+   <audio id="audio-player" controls></audio>
+   <div id="song-name" class="mdui-ripple mdui-ripple-white">歌名</div>
+   <div id="singer" class="mdui-ripple mdui-ripple-white">文件类型</div>
+   <div id="manage-area">
+      <button id="play" class="mdui-ripple mdui-ripple-white"><i class="bi bi-play-fill" style="font-size: 60px;"></i></button>
+      <input type="range" value="0" id="slider" />
+   </div>
+</div>
 		                </div>
 		            </div>
 		            
@@ -173,3 +178,4 @@
 		</body>
 		
 		</html>
+		
