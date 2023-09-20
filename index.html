@@ -2,8 +2,6 @@
 <html lang="en">
 
 <head>
-
-
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <title>SuchUI2-App</title>
@@ -13,7 +11,6 @@
     <script src="js/uni_api.js"></script>
     <link rel="stylesheet" href="img/bootstrap-icons-1.10.5/font/bootstrap-icons.css">
     <script type="module" src="https://unpkg.com/xy-ui"></script>
-    
 
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/mdui@1.0.1/dist/css/mdui.min.css"
         integrity="sha384-cLRrMq39HOZdvE0j6yBojO4+1PrHfB7a9l5qLcmRm/fiWXYY+CndJPmyu5FV/9Tw" crossorigin="anonymous" />
@@ -35,7 +32,8 @@
 
             <div id="main">
                 <input type="file" id="submit" accept="*"/>
-                <audio id="play-kit"></audio>
+                <video id="video-player" controls></video>
+                <audio id="audio-player"></audio>
                 <div id="song-name" class="mdui-ripple mdui-ripple-white">歌名</div>
                 <div id="singer" class="mdui-ripple mdui-ripple-white">文件类型</div>
                 <div id="manage-area">
@@ -46,16 +44,47 @@
         </div>
     </div>
 
-
-    <!-- <div class="page" id="version">
+    <div class="page" id="version">
         <div class="page-head">
             <div class="page-name">Back|Version</div>
         </div>
         <div class="page-body"></div>
-    </div> -->
+    </div>
 
-
-
+    <script>
+        // 在这里添加相应的JavaScript代码，用于控制视频和音频的播放
+		  // 获取播放按钮元素
+		    var playButton = document.getElementById("play");
+		    
+		    // 获取视频播放器和音频播放器元素
+		    var videoPlayer = document.getElementById("video-player");
+		    var audioPlayer = document.getElementById("audio-player");
+		    
+		    // 给播放按钮绑定点击事件
+		    playButton.addEventListener("click", function() {
+		        // 判断当前播放器状态
+		        if (videoPlayer.paused) {
+		            // 如果视频播放器处于暂停状态，则开始播放视频
+		            videoPlayer.play();
+		            // 隐藏音频播放器，防止同时播放视频和音频
+		            audioPlayer.pause();
+		        } else {
+		            // 如果视频播放器处于播放状态，则暂停视频播放
+		            videoPlayer.pause();
+		        }
+				// 获取输入文件选择器元素
+               var fileInput = document.getElementById("submit");
+               // 监听文件选择事件
+               fileInput.addEventListener("change", function(event) {
+               // 获取选择的文件
+               var file = event.target.files[0];
+               // 创建一个URL对象，用于获取文件的URL
+               var fileURL = URL.createObjectURL(file);
+              // 设置视频播放器的src属性为文件URL
+              videoPlayer.src = fileURL;
+});
+		    });
+    </script>
 
 </body>
 
