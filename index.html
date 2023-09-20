@@ -1,181 +1,199 @@
-			<!DOCTYPE html>
-		<html lang="en">
-		
-		<head>
-		    <meta charset="UTF-8">
-		    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-		    <title>SuchUI2-App</title>
-		    <link rel="stylesheet" href="css/index.css">
-		    <script src="js/index.js"></script>
-		    <script src="page/home/home.js"></script>
-		    <script src="js/uni_api.js"></script>
-		    <link rel="stylesheet" href="img/bootstrap-icons-1.10.5/font/bootstrap-icons.css">
-		    <script type="module" src="https://unpkg.com/xy-ui"></script>
-		
-		    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/mdui@1.0.1/dist/css/mdui.min.css"
-		        integrity="sha384-cLRrMq39HOZdvE0j6yBojO4+1PrHfB7a9l5qLcmRm/fiWXYY+CndJPmyu5FV/9Tw" crossorigin="anonymous" />
-		    <script src="https://cdn.jsdelivr.net/npm/mdui@1.0.1/dist/js/mdui.min.js"
-		        integrity="sha384-gCMZcshYKOGRX9r6wbDrvF+TcCCswSHFucUzUPwka+Gr+uHgjlYvkABr95TCOz3A"
-		        crossorigin="anonymous"></script>
-		
-		
-		    <style>
-		        body, html {
-		            height: 100%;
-		            margin: 0;
-		            padding: 0;
-		            overflow: hidden;
-		        }
-    body, html {
-        height: 100%;
-        margin: 0;
-        padding: 0;
-        overflow: hidden;
-    }
-    
-    #home {
-        display: flex;
-        flex-direction: column;
-        height: 100%;
-    }
-    
-    #head {
-        flex: 0 0 56px;
-        background-color: #333;
-        color: #fff;
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        padding: 0 16px;
-    }
-    
-    #home-body {
-        flex: 1;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-    }
+<!DOCTYPE html>
+<html lang="en">
 
-    #video-container {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        width: 100%;
-        height: 100%;
-    }
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>SuchUI2-App</title>
+    <link rel="stylesheet" href="css/index.css">
+    <script src="js/index.js"></script>
+    <script src="page/home/home.js"></script>
+    <script src="js/uni_api.js"></script>
+    <link rel="stylesheet" href="img/bootstrap-icons-1.10.5/font/bootstrap-icons.css">
+    <script type="module" src="https://unpkg.com/xy-ui"></script>
 
-    #video-player {
-        max-width: 100%;
-        max-height: 100%;
-    }
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/mdui@1.0.1/dist/css/mdui.min.css"
+        integrity="sha384-cLRrMq39HOZdvE0j6yBojO4+1PrHfB7a9l5qLcmRm/fiWXYY+CndJPmyu5FV/9Tw" crossorigin="anonymous" />
+    <script src="https://cdn.jsdelivr.net/npm/mdui@1.0.1/dist/js/mdui.min.js"
+        integrity="sha384-gCMZcshYKOGRX9r6wbDrvF+TcCCswSHFucUzUPwka+Gr+uHgjlYvkABr95TCOz3A"
+        crossorigin="anonymous"></script>
 
-		        #home {
-		            display: flex;
-		            flex-direction: column;
-		            height: 100%;
-		        }
-		        
-		        #head {
-		            flex: 0 0 56px;
-		            background-color: #333;
-		            color: #fff;
-		            display: flex;
-		            align-items: center;
-		            justify-content: space-between;
-		            padding: 0 16px;
-		        }
-		        
-		        #home-body {
-		            flex: 1;
-		            display: flex;
-		            justify-content: center;
-		            align-items: center;
-		        }
-		        
-		        #video-container {
-		            max-width: 100%;
-		            max-height: 100%;
-		            display: none;
-		        }
-		    </style>
-		</head>
+
+    <style>
+        body,
+        html {
+            height: 100%;
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+        }
+#home {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    border: none;
+    outline: none;
+    box-shadow: none;
+}
+        #home {
+            display: flex;
+            flex-direction: column;
+            height: 100%;
+        }
+
+        #head {
+            flex: 0 0 56px;
+            background-color: #333;
+            color: #fff;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0 16px;
+        }
+
+        #home-body {
+            flex: 1;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        #video-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 100%;
+            height: 100%;
+        }
+
+        #video-player {
+            max-width: 100%;
+            max-height: 100%;
+        }
+
+        #home {
+            display: flex;
+            flex-direction: column;
+            height: 100%;
+        }
+
+        #head {
+            flex: 0 0 56px;
+            background-color: #333;
+            color: #fff;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0 16px;
+        }
+
+        #home-body {
+            flex: 1;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        #video-container {
+            max-width: 100%;
+            max-height: 100%;
+            display: none;
+        }
+
+        /* 新增样式 */
+        #music-container {
+            display: none;
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        #select-file {
+            text-align: center;
+            margin-top: 20px;
+        }
+
+    </style>
+</head>
+
+<body>
+    <div id="home">
+        <div id="head">
+            <div id="app-name" onclick="quitApp()">{}</div>
+            <div id="time"></div>
+        </div>
+
+        <div id="home-body">
+
+            <div id="manage-area">
+                <div id="music-container">
+                    <audio id="audio-player" controls></audio>
+                    <div id="song-name" class="mdui-ripple mdui-ripple-white">歌名</div>
+                    <div id="singer" class="mdui-ripple mdui-ripple-white">文件类型</div>
+                    <div id="manage-area">
+                        <button id="play" class="mdui-ripple mdui-ripple-white"><i class="bi bi-play-fill"
+                                style="font-size: 60px;"></i></button>
+                        <input type="range" value="0" id="slider" />
+                    </div>
+                </div>
+
+                <div id="select-file">
+                    <label for="submit" class="mdui-ripple mdui-ripple-white">选择文件</label>
+                    <input type="file" id="submit" accept="*" />
+                </div>
+
+            </div>
+        </div>
+
+        <div id="video-container">
+            <video id="video-player" controls></video>
+        </div>
+
+    </div>
+
+    <div class="page" id="version">
+        <div class="page-head">
+            <div class="page-name">Back|Version</div>
+        </div>
+        <div class="page-body"></div>
+    </div>
+
+    <script>
+        var playButton = document.getElementById("play");
+        var videoPlayer = document.getElementById("video-player");
+        var audioPlayer = document.getElementById("audio-player");
+        var musicContainer = document.getElementById("music-container");
+        var videoContainer = document.getElementById("video-container");
+
+        // 隐藏视频播放窗口
+        videoContainer.style.display = "none";
+
+        playButton.addEventListener("click", function() {
+            if (videoPlayer.paused) {
+                videoPlayer.play();
+                audioPlayer.pause();
+            } else {
+                videoPlayer.pause();
+            }
+        });
+
+        var fileInput = document.getElementById("submit");
+        fileInput.addEventListener("change", function(event) {
+            var file = event.target.files[0];
+            var fileURL = URL.createObjectURL(file);
+
+            // 判断文件类型为MP4时显示视频播放器，否则显示音频播放器
+            if (file.type === "video/mp4") {
+                videoContainer.style.display = "block";
+                musicContainer.style.display = "none";
+                videoPlayer.src = fileURL;
+            } else {
+                videoContainer.style.display = "none";
+                musicContainer.style.display = "block";
+                audioPlayer.src = fileURL;
+            }
+        });
+    </script>
+
+</body>
 		
-		<body>
-		    <div id="home">
-		        <div id="head">
-		            <div id="app-name" onclick="quitApp()">{}</div>
-		            <div id="time"></div>
-		        </div>
-		
-		        <div id="home-body">
-		          
-		                <div id="manage-area">
-		                   <div id="music-container" style="display: none;">
-   <!-- 修改为 audio 标签 -->
-   <audio id="audio-player" controls></audio>
-   <div id="song-name" class="mdui-ripple mdui-ripple-white">歌名</div>
-   <div id="singer" class="mdui-ripple mdui-ripple-white">文件类型</div>
-   <div id="manage-area">
-      <button id="play" class="mdui-ripple mdui-ripple-white"><i class="bi bi-play-fill" style="font-size: 60px;"></i></button>
-      <input type="range" value="0" id="slider" />
-   </div>
-</div>
-		                </div>
-		            </div>
-		            
-		            <div id="video-container">
-		                <video id="video-player" controls></video>
-		            </div>
-		            
-		            <input type="file" id="submit" accept="*" />
-		        </div>
-		    </div>
-		
-		    <div class="page" id="version">
-		        <div class="page-head">
-		            <div class="page-name">Back|Version</div>
-		        </div>
-		        <div class="page-body"></div>
-		    </div>
-		
-		    <script>
-		        var playButton = document.getElementById("play");
-		        var videoPlayer = document.getElementById("video-player");
-		        var audioPlayer = document.getElementById("audio-player");
-		        var musicContainer = document.getElementById("music-container");
-		        var videoContainer = document.getElementById("video-container");
-		
-				// 隐藏视频播放窗口
-		        videoContainer.style.display = "none";
-		
-		        playButton.addEventListener("click", function() {
-		          if (videoPlayer.paused) {
-		            videoPlayer.play();
-		            audioPlayer.pause();
-		          } else {
-		            videoPlayer.pause();
-		          }
-		        });
-		
-		        var fileInput = document.getElementById("submit");
-		        fileInput.addEventListener("change", function(event) {
-		          var file = event.target.files[0];
-		          var fileURL = URL.createObjectURL(file);
-		          
-		          // 判断文件类型为MP4时显示视频播放器，否则显示音频播放器
-		          if (file.type === "video/mp4") {
-		            videoContainer.style.display = "block";
-		            musicContainer.style.display = "none";
-		            videoPlayer.src = fileURL;
-		          } else {
-		            videoContainer.style.display = "none";
-		            musicContainer.style.display = "block";
-		            audioPlayer.src = fileURL;
-		          }
-		        });
-		    </script>
-		
-		</body>
-		
-		</html>
 		
