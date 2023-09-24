@@ -1,11 +1,56 @@
 
 
 function addSubmitListener() {
-    document.getElementById("submit").addEventListener('change', (event) => {
-        
-        if(event.target.files.length!=0) {clearInterval(running);}
+    document.querySelector(`#submit`).addEventListener('change', (event) => {
+
+        if (event.target.files.length != 0) {
+            clearInterval(running);
+            document.getElementById(`music-list-root`).innerHTML = ``;
+        }
         var file = event.target.files[0];
-        console.log(file)
+        var allFiles = Array.from(event.target.files);
+
+        
+        console.log(allFiles);
+        //创建播放列表
+        var ionList=document.createElement('ion-list');
+    
+        allFiles.forEach((item) => {
+            var obj = document.createElement('ion-item');     
+            ionList.appendChild(obj);
+            obj.innerHTML = item.name;
+            obj.addEventListener('click', function () {
+                clearInterval(running);
+                //
+                document.getElementById(`music-list`).style.left = "120%";
+                setTimeout(function () { document.getElementById(`music-list`).style.display = `none`; }, 350);
+                //
+                var url = URL.createObjectURL(item);
+                var kit = document.getElementById("play-kit")
+                kit.setAttribute("src", url);
+                kit.play();
+                document.getElementById('play').innerHTML = "<i class='bi bi-pause-fill' style='font-size:60px'></i>"
+
+                running = setInterval(function () {
+                    var kit = document.getElementById("play-kit")
+                    var current = kit.currentTime;
+                    var duration = kit.duration;
+                    var percent = (current / duration) * 100;
+                    //console.log(percent)
+                    percent.toString()
+                    document.getElementById("slider").value = percent
+                    //console.log(document.activeElement)
+
+                }, 100)
+                document.getElementById("song-name").innerHTML = item.name
+                document.getElementById("singer").innerHTML = item.type
+                console.log(url)
+            })
+            document.getElementById(`music-list-root`).insertAdjacentElement("beforeend", ionList);
+        })
+
+
+        //console.log(file)
         var url = URL.createObjectURL(file);
         var kit = document.getElementById("play-kit")
         kit.setAttribute("src", url);
@@ -26,7 +71,7 @@ function addSubmitListener() {
         document.getElementById("song-name").innerHTML = file.name
         document.getElementById("singer").innerHTML = file.type
         console.log(url)
-        
+
     }, false)
 }
 

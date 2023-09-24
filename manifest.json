@@ -1,6 +1,6 @@
 {
     "@platforms" : [ "android", "iPhone", "iPad" ],
-    "id" : "", /*应用的标识*/
+    "id" : "H5987ECF5", /*应用的标识*/
     "name" : "", /*应用名称，程序桌面图标名称*/
     "version" : {
         "name" : "", /*应用版本名称*/

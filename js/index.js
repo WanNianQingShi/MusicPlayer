@@ -10,7 +10,7 @@ window.onload = function () {
     getTime()
 
     var GT=setInterval(getTime, 2000);
-    setInterval(addMDUI, 2000);   
+    //setInterval(addMDUI, 2000);   
     addEmptyBox()
     //getExpandList();
 
@@ -22,6 +22,14 @@ window.onload = function () {
 
     addPlayerManager()
     
+
+    //
+    const range = document.querySelector('ion-range');
+    range.pinFormatter = (value) => {
+      return `${value}%`;
+    };
+
+    var mySwiper = new Swiper('.swiper-container')
 
 }
 
@@ -150,12 +158,30 @@ function clonePage(id) {
         item.addEventListener("click", function () {
             //点击page-name是关闭该页面
             item.parentElement.parentElement.style.left = "120%";
-            setTimeout(function () { item.parentElement.parentElement.remove(); }, 350);
+            /* setTimeout(function () { item.parentElement.parentElement.remove(); }, 350); */
+            setTimeout(function () { item.parentElement.parentElement.style.display=`none`; }, 350);
+
 
 
         })
     })
 
+}
+
+function showPage(id){
+    document.getElementById(id).style.left = "0";
+    document.getElementById(id).style.display=`block`;
+    document.querySelectorAll(".page-name").forEach(function (item) {
+        item.addEventListener("click", function () {
+            //点击page-name是关闭该页面
+            item.parentElement.parentElement.style.left = "120%";
+            /* setTimeout(function () { item.parentElement.parentElement.remove(); }, 350); */
+            setTimeout(function () { item.parentElement.parentElement.style.display=`none`; }, 350);
+
+
+
+        })
+    })
 }
 function addEmptyBox(){
     document.querySelectorAll(".page").forEach(item=>{
