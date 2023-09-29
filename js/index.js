@@ -71,7 +71,18 @@ function addMDUI(){
     document.querySelectorAll("button").forEach(item => item.classList.add("mdui-ripple","mdui-ripple-white"));
 }
 
+		
+function toggleMute() {
+  var muteCheckbox = document.getElementById("mute-checkbox");
+  var audio = document.getElementById("play-kit");
+  audio.muted = muteCheckbox.checked; // 切换静音状态
 
+  if (muteCheckbox.checked) {
+    audio.volume = 0; // 如果静音，将音量设置为0
+  } else {
+    audio.volume = 1; // 如果取消静音，将音量恢复为1
+  }
+}
 function setRightSlideClosePage() {
     var startX = 0;
 
