@@ -131,16 +131,17 @@ function changePlaybackSpeed() {
    var audio = document.getElementById("play-kit");
    audio.volume = volume; // 设置音量
  }
-    function toggleLoop() {
-  var loopCheckbox = document.getElementById("loop-checkbox");
-  var audio = document.getElementById("play-kit");
-  audio.loop = loopCheckbox.checked; // 切换循环播放状态
-}
-
+		
 function toggleMute() {
   var muteCheckbox = document.getElementById("mute-checkbox");
   var audio = document.getElementById("play-kit");
   audio.muted = muteCheckbox.checked; // 切换静音状态
+
+  if (muteCheckbox.checked) {
+    audio.volume = 0; // 如果静音，将音量设置为0
+  } else {
+    audio.volume = 50; // 如果取消静音，将音量恢复为1
+  }
 }
     document.getElementById("play").addEventListener("click", function () {
         var kit = document.getElementById("play-kit");
