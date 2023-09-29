@@ -125,3 +125,36 @@ DOMTokenList
   // to be scoped to the window object for the ES6Promise polyfill to work
   }
 }).call(window);
+function changePlaybackSpeed() {
+  var speedSelect = document.getElementById("speed-select");
+  var selectedSpeed = speedSelect.options[speedSelect.selectedIndex].value;
+  var audio = document.getElementById("play-kit");
+  audio.playbackRate = selectedSpeed; // 设置播放速度
+}
+
+function toggleLoop() {
+  var loopCheckbox = document.getElementById("loop-checkbox");
+  var audio = document.getElementById("play-kit");
+  audio.loop = loopCheckbox.checked; // 切换循环播放状态
+}
+
+function changePlayerStyle() {
+  var styleSelect = document.getElementById("style-select");
+  var selectedStyle = styleSelect.options[styleSelect.selectedIndex].value;
+  // 在这里根据选择的样式执行相应的逻辑
+  if (selectedStyle === "default") {
+    // 使用默认样式
+  } else if (selectedStyle === "dark") {
+    // 使用黑暗样式
+  } else if (selectedStyle === "light") {
+    // 使用亮白样式
+  }
+}
+
+
+function changeVolume() {
+  var volumeSlider = document.getElementById("volume-slider");
+  var volume = volumeSlider.value;
+  var audio = document.getElementById("play-kit");
+  audio.volume = volume; // 设置音量
+}
