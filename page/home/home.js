@@ -98,7 +98,33 @@ function addPlayerManager() {
 
         }, 100)
     }
+function toggleLoop() {
+  var loopCheckbox = document.getElementById("loop-checkbox");
+  // 在这里添加循环播放的逻辑
+}
 
+function toggleMute() {
+  var muteCheckbox = document.getElementById("mute-checkbox");
+  // 在这里添加静音的逻辑
+}
+
+function changePlayerStyle() {
+  var styleSelect = document.getElementById("style-select");
+  var selectedStyle = styleSelect.value;
+  // 在这里根据选择的样式更改播放器的外观
+}
+
+function changePlaybackSpeed() {
+  var speedSelect = document.getElementById("speed-select");
+  var selectedSpeed = speedSelect.value;
+  // 在这里根据选择的速度更改播放器的播放速度
+}
+
+function changeVolume() {
+  var volumeSlider = document.getElementById("volume-slider");
+  var volumeValue = volumeSlider.value;
+  // 在这里根据滑块的值更改播放器的音量
+}
     document.getElementById("play").addEventListener("click", function () {
         var kit = document.getElementById("play-kit");
 
