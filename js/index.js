@@ -34,32 +34,38 @@ window.onload = function () {
 }
 
 
-function toggleLoop() {
-  var loopCheckbox = document.getElementById("loop-checkbox");
-  // 在这里添加循环播放的逻辑
+function changePlaybackSpeed() {
+  var speedSelect = document.getElementById("speed-select");
+  var selectedSpeed = speedSelect.options[speedSelect.selectedIndex].value;
+  var audio = document.getElementById("play-kit");
+  audio.playbackRate = selectedSpeed; // 设置播放速度
 }
 
-function toggleMute() {
-  var muteCheckbox = document.getElementById("mute-checkbox");
-  // 在这里添加静音的逻辑
+function toggleLoop() {
+  var loopCheckbox = document.getElementById("loop-checkbox");
+  var audio = document.getElementById("play-kit");
+  audio.loop = loopCheckbox.checked; // 切换循环播放状态
 }
 
 function changePlayerStyle() {
   var styleSelect = document.getElementById("style-select");
-  var selectedStyle = styleSelect.value;
-  // 在这里根据选择的样式更改播放器的外观
+  var selectedStyle = styleSelect.options[styleSelect.selectedIndex].value;
+  // 在这里根据选择的样式执行相应的逻辑
+  if (selectedStyle === "default") {
+    // 使用默认样式
+  } else if (selectedStyle === "dark") {
+    // 使用黑暗样式
+  } else if (selectedStyle === "light") {
+    // 使用亮白样式
+  }
 }
 
-function changePlaybackSpeed() {
-  var speedSelect = document.getElementById("speed-select");
-  var selectedSpeed = speedSelect.value;
-  // 在这里根据选择的速度更改播放器的播放速度
-}
 
 function changeVolume() {
   var volumeSlider = document.getElementById("volume-slider");
-  var volumeValue = volumeSlider.value;
-  // 在这里根据滑块的值更改播放器的音量
+  var volume = volumeSlider.value;
+  var audio = document.getElementById("play-kit");
+  audio.volume = volume; // 设置音量
 }
 function addMDUI(){
     document.querySelectorAll("button").forEach(item => item.classList.add("mdui-ripple","mdui-ripple-white"));
